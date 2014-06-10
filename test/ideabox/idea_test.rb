@@ -2,6 +2,7 @@ require './test/test_helper'
 require './lib/ideabox/idea'
 
 class IdeaTest < Minitest::Test
+
   def test_basic_idea
     idea = Idea.new("title", "description")
     assert_equal "title", idea.title
@@ -35,6 +36,19 @@ class IdeaTest < Minitest::Test
     idea = Idea.new("dinner", "beef stew")
     idea.id = 1
     assert_equal 1, idea.id
+  end
+
+  def test_update_values
+  idea = Idea.new("drinks", "sparkly water")
+  idea.title = "happy hour"
+  idea.description = "mojitos"
+  assert_equal "happy hour", idea.title
+  assert_equal "mojitos", idea.description
+end
+
+  def test_a_new_idea
+    idea = Idea.new('sleep', 'all day')
+    assert idea.new?
   end
 
 end
