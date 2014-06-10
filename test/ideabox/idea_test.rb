@@ -50,5 +50,5 @@ end
     idea = Idea.new('sleep', 'all day')
     assert idea.new?
   end
-
+  
 end
